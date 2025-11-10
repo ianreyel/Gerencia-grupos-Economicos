@@ -1,0 +1,38 @@
+USE laravel;
+
+CREATE TABLE grupo_economicos(
+Id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+Nome VARCHAR(100),
+Data_criacao datetime,
+Ultima_atualizacao datetime);
+
+
+CREATE TABLE bandeiras(
+Id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+Nome VARCHAR(100),
+Grupo_economico INT NOT NULL,
+Data_criacao datetime,
+Ultima_atualizacao datetime,
+FOREIGN KEY(Grupo_economico) REFERENCES grupo_economicos(Id));
+
+
+CREATE TABLE unidades(
+Id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+Nome VARCHAR(100),
+Razao_social VARCHAR(255),
+Cnpj VARCHAR(14), 
+Bandeira INT NOT NULL,
+Data_criacao datetime,
+Ultima_atualizacao datetime,
+FOREIGN KEY(Bandeira) REFERENCES bandeiras(Id));
+
+
+CREATE TABLE colaboradores(
+Id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+Nome VARCHAR(100),
+Email VARCHAR(255),
+Cpf VARCHAR(11), 
+Unidade INT NOT NULL,
+Data_criacao datetime,
+Ultima_atualizacao datetime,
+FOREIGN KEY(Unidade) REFERENCES unidades(Id));
