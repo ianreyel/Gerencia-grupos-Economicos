@@ -72,24 +72,26 @@ Este guia assume que você está utilizando o **XAMPP** para gerenciar o ambient
 3.  **Ajustes Adicionais de Banco de Dados:**
     * Existe um arquivo neste repositorio chamado `alteracoes Banco de dados.txt`, **execute o conteúdo deste arquivo diretamente no MySQL/PHPMyAdmin** para garantir a funcionalidade do sistema, pois nele esta armazenado as tabelas adicionais do projeto.
 
-### 4. Configuração do Usuário Administrador (Segurança)
+### 4. Executar a Aplicação
 
-O sistema de segurança exige que a permissão de administração seja definida diretamente no banco de dados.
-
-1.  Acesse a aplicação e realize o **registro** de um novo usuário.
-2.  Acesse o **PHPMyAdmin** ou o cliente SQL.
-3.  Vá para a tabela **`users`**.
-4.  Localize o seu usuário e **altere o valor da coluna `is_admin` de `0` para `1`**.
-
-Após esta etapa, o usuário terá acesso total (CRUD, Auditoria e Relatórios) ao sistema.
-
-### 5. Executar a Aplicação
-
-Inicie o servidor local do Laravel:
+Inicie o servidor local do Laravel com o comando abaixo, e acesse o mesmo pelo link que sera fornecido apos a inicialização:
 
 ```bash
 php artisan serve
 ```
-Em caso de duvida no item 1 pode se acompanhar o video a baixo que mostra a instalação padrão do Laravel:
+
+### 5. Configuração do Usuário Administrador (Segurança)
+
+O sistema de segurança exige que a permissão de administração seja definida diretamente no banco de dados.
+
+1.  Acesse a aplicação e realize o **registro no canto superior direito** de um novo usuário.
+2.  Realize o **login**.
+3.  Acesse o **PHPMyAdmin** ou o cliente SQL.
+4.  Vá para a tabela **`users`**.
+5.  Localize o seu usuário e **altere o valor da coluna `is_admin` de `0` para `1`**.
+
+Após esta etapa, o usuário terá acesso total (CRUD, Auditoria e Relatórios) ao sistema, é possivel acessar qualquer funcionalidade do sistema pela Navbar padrão do Laravel que te direciona inicialmente a tela de dashboard padrão.
+
+### Em caso de duvida no item 1 pode se acompanhar o video a baixo que mostra a instalação padrão do Laravel:
 https://www.youtube.com/watch?v=f8Dd1GJFZJk&t=1s
 
